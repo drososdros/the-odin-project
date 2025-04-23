@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	list-style: none;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	font-family: Roboto;
+	box-sizing: border-box;
+}
+
+.header {
+	display: flex;
+	background-color: #1f2937;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 150px;
+
+
+}
+
+.header-logo {
+	font-size: 24px;
+	color: #f8faf8;
+	font-weight: 700;
+
+
+}
+
+.links {
+	display: flex;
+	gap: 12px;
+
+}
+
+a {
+	color: #e5e7eb;
+	font-size: 18px;
+}
+
+.hero {
+	background-color: #1f2937;
+	padding: 80px 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.hero-paragraph {
+	flex: 1 1 0;
+	padding: 0 50px 0 0;
+}
+
+.hero-img {
+	flex: 1 1 0;
+	width: 450px;
+	border-radius: 10px;
+
+}
+
+.hero-title {
+	font-size: 48px;
+	color: #f9faf8;
+	font-weight: 900;
+}
+
+.hero-text {
+	color: #e5e7eb;
+	font-size: 16px;
+	margin: 0 0 8px 0;
+
+}
+
+.hero-btn {
+	background-color: #3882f6;
+	border: none;
+	padding: 6px 20px;
+	border-radius: 5px;
+	color: #f9faf8;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.hero-btn:hover {
+	background-color: #3896f9ff;
+}
+
+
+.card-title {
+	text-align: center;
+	padding: 32px 0;
+}
+
+.card-container {
+	display: flex;
+	justify-content: center;
+	gap: 42px;
+	padding: 0 0 80px 0;
+	flex-wrap: wrap;
+}
+
+.card-container>* {
+	flex: 0 1 0;
+	text-align: center;
+	font-size: 16px;
+}
+
+.card-container img {
+	width: 120px;
+	height: 120px;
+	border-radius: 12px;
+}
+
+.quote {
+	display: flex;
+	justify-content: center;
+	background-color: #e5e7eb;
+	padding: 82px;
+}
+
+.quote-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.quote-txt {
+	font-size: 36px;
+	font-style: italic;
+	color: #1f2937;
+	font-weight: light;
+
+}
+
+.quote-title {
+	font-size: 18px;
+	font-weight: bold;
+	align-self: flex-end;
+}
+
+.end {
+	display: flex;
+	justify-content: center;
+	padding: 70px 0;
+}
+
+.end-container {
+	width: 60%;
+	border-radius: 8px;
+	background-color: #3882f6;
+	padding: 48px 98px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.end-inner-container {
+	flex: 1 1 auto;
+}
+
+.end-btn {
+	padding: 4px 28px;
+	background-color: #3882f6;
+	border-radius: 10px;
+	border: 2px solid #f8faf8;
+	color: #f8faf8;
+	font-weight: 700;
+}
+
+.end-title {
+	color: #f8faf8;
+
+}
+
+.end-txt {
+
+	color: #e5e7eb;
+}
+
+.footer {
+
+	background-color: #1f2937;
+	padding: 28px 0;
+	text-align: center;
+	color: #e5e7eb;
+}
