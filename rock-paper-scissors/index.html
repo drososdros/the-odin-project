@@ -4,14 +4,40 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Rock Paper Scissor</title>
 	<link href="style.css" rel="stylesheet">
-</head>
-
-<body>
-	<script src="main.js">
+	<script type="module" src="main.js">
 
 	</script>
+</head>
+
+<!-- <script src="main.js"> -->
+<!-- </script> -->
+
+
+<body>
+
+	<div id="winner-box" class="hidden">
+		<div class="winner">
+		</div>
+		<button class="winner-btn">Start Again</button>
+	</div>
+	<h1 class="title">rock papper scissor</h1>
+	<div class="total-score"> Player vs Computer <div>
+			score
+			<span id="player-score">0</span>:<span id="computer-score">0</span>
+		</div>
+	</div>
+	<div class="score">
+		<p class="current-score"></p>
+	</div>
+
+	<div class="container">
+
+		<div id="rock" class="game-icons"></div>
+		<div id="paper" class="game-icons"></div>
+		<div id="scissor" class="game-icons"> </div>
+	</div>
 
 </body>
 

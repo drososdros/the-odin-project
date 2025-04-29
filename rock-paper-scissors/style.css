@@ -1,4 +1,114 @@
 body {
 	background-color: #030712;
+	height: 100svh;
+	overflow: hidden;
+}
 
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40%;
+}
+
+.title {
+	color: white;
+	text-transform: capitalize;
+	font-size: 48px;
+	padding: 36px 0 0 0;
+	text-align: center;
+}
+
+.total-score {
+	color: white;
+	text-align: center;
+	font-size: 18px;
+	text-transform: capitalize;
+}
+
+
+
+.game-icons {
+	color: white;
+	font-size: 55px;
+	border: 2px solid transparent;
+	background-color: #111827;
+	padding: 20px;
+	border-radius: 50%;
+}
+
+.score {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.draw {
+	color: white;
+	background-color: #f97316;
+}
+
+.win {
+	background-color: #15803d;
+	color: #0a0a0a;
+}
+
+.game-icons:hover {
+	cursor: pointer;
+	background-color: #1f2937;
+}
+
+.loose {
+
+	color: #0a0a0a;
+	background-color: #dc2626;
+}
+
+.current-score {
+
+	text-transform: capitalize;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 12px 25px;
+	border-radius: 12px;
+
+}
+
+.game-icons:nth-child(odd) {
+	align-self: flex-end;
+	margin: 0 25px;
+}
+
+.hidden {
+	display: none;
+}
+
+.winner-container {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+
+}
+
+.winner {
+	font-size: 24px;
+	padding: 24px 98px;
+	border-radius: 10px;
+	margin: 0 0 15px 0;
+
+}
+
+.winner-btn {
+	background-color: #1f2937;
+	padding: 8px 24px;
+	border: none;
+	border-radius: 10px;
+	color: white;
+}
+
+.winner-btn:hover {
+	background-color: #111827;
 }
