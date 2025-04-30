@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: white;
   font-size: 24px;
   --background-color-primary: #0c0a09;
   --background-color-secondary: #1c1917;
@@ -12,6 +11,8 @@
   --primary-color: white;
   --error-primary: #b91c1c;
   --error-secondary: #dc2626;
+
+  color: var(--primary-color);
 
 
 }
