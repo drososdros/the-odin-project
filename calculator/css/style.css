@@ -86,6 +86,11 @@ body {
 .btn:hover {
   background-color: var(--background-color-quaternary);
 
+
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .number {
