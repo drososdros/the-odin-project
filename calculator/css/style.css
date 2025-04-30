@@ -39,6 +39,11 @@ body {
   border-radius: 10px 10px 0 0;
   height: 100%;
   outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
 }
 
@@ -96,5 +101,27 @@ body {
 
 .number {
   background-color: var(--background-color-tertiary);
+
+}
+
+.result-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 4px;
+  /* background-color: red; */
+  background-color: var(--background-color-secondary);
+}
+
+.operation {
+  width: 50%;
+}
+
+.assingment {
+  width: 10%;
+}
+
+.result {
+  width: 40%;
 
 }
