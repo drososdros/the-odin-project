@@ -10,6 +10,8 @@
   --background-color-quaternary: #44403c;
   --button-color: cyan;
   --primary-color: white;
+  --error-primary: #b91c1c;
+  --error-secondary: #dc2626;
 
 
 }
@@ -43,9 +45,20 @@ body {
   background-color: var(--background-color-secondary);
   border: 0;
   height: 10%;
+  outline: none;
+  padding: 10px 0 0 16px;
+
+}
+
+.error-message {
+  height: 44px;
+  font-size: 16px;
+  background-color: var(--background-color-secondary);
   border-radius: 0 0 10px 10px;
   margin: 0 0 10px 0;
-  outline: none;
+  padding: 0 0 4px 10px;
+  color: var(--error-secondary);
+
 
 }
 
