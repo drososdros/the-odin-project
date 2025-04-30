@@ -25,7 +25,7 @@ body {
 
 .container {
   margin: 24px auto;
-  width: 700px;
+  max-width: 700px;
   height: 90%;
 
   display: flex;
@@ -75,7 +75,7 @@ body {
 
 }
 
-.row button {
+.btn {
   padding: 10px 0;
   background-color: var(--background-color-secondary);
   border: 2px solid var(--background-color-primary);
@@ -83,7 +83,12 @@ body {
   flex: 1 0 0;
 }
 
-.row button:hover {
+.btn:hover {
   background-color: var(--background-color-quaternary);
+
+}
+
+.number {
+  background-color: var(--background-color-tertiary);
 
 }
