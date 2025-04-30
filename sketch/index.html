@@ -12,14 +12,32 @@
 </head>
 
 <body>
-	<h1>Title</h1>
-	<div class="main-container">
+	<h1>Sketch</h1>
+	<div class="container">
 
+		<div class="main-container">
+
+		</div>
 	</div>
 	<div class="select-action">
-		<p>select grid</p>
-		<p>reset</p>
-		<p>color picker</p>
+		<div class="color-picker">
+			<label for="color">Pick Your Color</label>
+
+			<input id="color" type="color" value="#09090b" />
+		</div>
+		<div class="btn-container">
+			<button type="reset" class="reset-btn">reset</button>
+		</div>
+		<div class="grid-select">
+			<label for="grid-selector" class="grid-label">
+				grid:
+				<span id="grid-value"></span>
+			</label>
+			<input type="range" id="grid-selector" step="2" min="6" max="50" value="10" />
+
+
+		</div>
+
 	</div>
 
 
