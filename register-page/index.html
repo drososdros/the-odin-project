@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Plan Your Future</title>
   <link href="css/style.css" rel="stylesheet" />
+  <script type="module" src="js/main.js">
+
+  </script>
 </head>
 
 <body>
   <div class="form__block">
     <div class="form__left darken">
-      <div class="form__left-quote">
+      <div class="form__left-quote quote">
 
         <q>
           one day you will wake up and there will be no more time
@@ -34,11 +37,72 @@
       </p>
     </div>
     <div class="form__right">
-      <div class="form__right-container">
+      <section class="padding">
+        <q class="right--quote">Every step you take today brings you closer to the life you dream of.</q>
+
+      </section>
+      <form class="form">
+        <div class="padding form--color">
 
 
-        <p></p>
-      </div>
+          <legend class="form__legend"> lets do this </legend>
+          <fieldset class="form__fieldset">
+            <div class="input__container">
+
+              <input class="input" placeholder="name" pattern="^[a-zA-Z]+$" type="text" name="firstName" required>
+              <label class="input__container-label" for="firstName">Name</label>
+            </div>
+            <div class="input__container">
+              <input class="input" type="text" pattern="^[a-zA-Z]+$" placeholder="Surname" name="lastName" required>
+              <label class="input__container-label" for="lastName">Surname</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <div class="input__container">
+              <input class="input" type="email" placeholder="email eg: example@example.com" name="email" required>
+              <label class="input__container-label" for="email">email</label>
+            </div>
+            <div class="input__container">
+              <input class="input" type="text" pattern="^[0-9]+$" placeholder="phone number" minlength="10"
+                maxlength="10" name="phoneNumber">
+              <label class="input__container-label" for="phoneNumber">phone number</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <div class="input__container">
+              <input class="input" type="password" id="password" name="password" placeholder="password" required>
+              <label class="input__container-label" for="password">password</label>
+              <div class="pass">
+                <span class="pass__title"> password should Contain</span>
+                <span class="pass__letter"> 1 Uppercase letter</span>
+                <span class="pass__number">1 number</span>
+                <span class="pass__symbol">1 symbol [@ ! * #]</span>
+                <span class="pass__length">8 or more char</span>
+
+              </div>
+
+            </div>
+            <div class="input__container">
+              <input class="input" type="password" id="password2" name="password2" placeholder="confirm password"
+                required>
+              <label class="input__container-label" for="password2">confirm password</label>
+              <div class="pass"> <span class="pass__match">Number Dont Match</span></div>
+            </div>
+          </fieldset>
+
+        </div>
+        <div class="form__footer padding">
+          <button class="form__button">Create Account</button>
+          <p class="form__login">already have an account <a href="#"> Log in</a></p>
+
+
+        </div>
+
+      </form>
+
+
     </div>
   </div>
 </body>
