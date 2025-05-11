@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #fafaf9;
+  --secondary-color: #f5f5f4;
+  --tertiary-color: #e7e5e4;
+  --quaternary-color: #d6d3d1;
+  --bg-primary-color: #0c0a09;
+  --bg-secondary-color: #1c1917;
+  --bg-tertiary-color: #292524;
+  --bg-quaternary-color: #44403c;
+  --sidebar-color: #1d4ed8;
+}
+
+body {
+  height: 100svh;
+  overflow: hidden;
+}
+
+
+.main__layout {
+  height: 100%;
+  background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 1fr 6fr;
+
+}
+
+.main__layout-sidebar {
+  grid-row-start: span 2;
+  background-color: var(--sidebar-color);
+
+}
+
+.main__layout-navbar {
+  background-color: blue;
+}
+
+.main__layout-content {
+  background-color: cyan;
+}
