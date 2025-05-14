@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bookstore</title>
+	<link href="css/style.css" rel="stylesheet">
+	<script type="module" src="js/main.js"></script>
+</head>
+
+<body class="main__layout">
+	<div class="modal modal__hide">
+		<div class="modal__close">X</div>
+
+		<form class="form" action="#" method="post">
+			<legend>Add a book</legend>
+			<div>
+				<label for="title">Title of the book</label>
+				<input type="text" name="title" required>
+			</div>
+
+			<div>
+				<label for="description">description of the book</label>
+				<input type="text" name="description" required>
+			</div>
+
+			<div>
+				<label for="pages">how pages is the book</label>
+				<input type="number" name="pages" required>
+			</div>
+
+			<div>
+				<input type="checkbox" name="isRead">
+				<label for="isRead">have you read it</label>
+			</div>
+			<button type="submit">Add Book</button>
+
+		</form>
+	</div>
+	<nav>
+		<ul class="navbar">
+			<li class="logo">Logo</li>
+			<li><button class="btn " id="create__book" type="button" href="">add book</button></li>
+		</ul>
+
+	</nav>
+	<h2 class="title">BookSelf</h2>
+	<main class="book__layout">
+
+
+
+	</main>
+
+</body>
+
+</html>
