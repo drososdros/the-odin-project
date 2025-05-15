@@ -22,7 +22,7 @@ type Board = {
 type Game = {
   playRound: (index: number) => undefined | string
   getBoard: Board["getBoard"]
-  playersScore: { player1: number, player2: number }
+  playersScore: () => { player1: number, player2: number }
   resetGame: () => void
   changeName: (oldName: string, newName: string) => void
 
@@ -57,8 +57,11 @@ const getWinner: (board: string[]) => GetWinner = function(board): GetWinner {
 
 const createPlayer: (name: string, symbol: string) => Player = function(name, symbol): Player {
   let score = 0
-  const getScore = () => score
-  const increaseScore = () => score++
+
+  const getScore = () => {
+    return score
+  }
+  const increaseScore = () => score++;
   function resetScore() { score = 0 }
 
   return { name, symbol, increaseScore, getScore, resetScore }
@@ -83,8 +86,15 @@ function createGame(): Game {
 
   const board = createBoard()
   const getBoard = board.getBoard
-  const playersScore = { player1: players[0].getScore(), player2: players[1].getScore() }
+  const playersScore = () => {
+    return {
+
+      player1: players[0].getScore(),
+      player2: players[1].getScore()
+    }
+  }
   function resetGame() {
+
     board.resetBoard()
     for (const player of players) {
       player.resetScore()
@@ -98,21 +108,25 @@ function createGame(): Game {
   }
 
   const playRound: Game["playRound"] = (index: number) => {
+
     if (!board.isEmptyIndex(index)) {
       return
     }
+
     board.setValue(index, currentPlayer.symbol)
     const winner = getWinner(board.getBoard())
     if (winner.winner) {
       const playerIndex = players.findIndex(player => player.symbol === winner.playerSymbol)
       const player = players[playerIndex]
+
       player.increaseScore()
+
       board.resetBoard()
       currentPlayer = player
-      return `${player.name} wins!`
+      return `${player.symbol} wins!`
     } else if (winner.gameOver) {
       board.resetBoard()
-      return "Its a Draw"
+      return "X O Draw"
     } else {
       nextPlayer()
       return
@@ -123,11 +137,66 @@ function createGame(): Game {
 
 }
 
-function drawDom() {
+function playOnDom() {
+  const game = createGame()
+  const gameBoard = document.querySelector(".gameboard")!
+  const winn = document.querySelector(".winner")!
+  function resetGame() {
+    game.resetGame()
+    createDom()
+  }
+  winn.addEventListener("click", () => {
+    winn.classList.toggle("display-none")
+  })
+
+  function createDom() {
+    const playerOne = document.getElementById("X")!
+    const playerTwo = document.getElementById("O")!
+
+    playerOne.textContent = game.playersScore().player1.toString()
+    playerTwo.textContent = game.playersScore().player2.toString()
+
+    gameBoard.innerHTML = ""
+    game.getBoard().map((value, index) => {
+
+      const elem = document.createElement("button")
+      elem.textContent = value
+      elem.id = index.toString()
+      if (value === "O") {
+        elem.classList.add("white")
+      }
+      gameBoard.appendChild(elem)
+    })
+  }
+
+  gameBoard.addEventListener("click", (e) => {
+    const button = e.target as HTMLElement
+
+    if (button.id !== "") {
+      const winner = game.playRound(parseInt(button.id))
+      if (winner) {
+        const firsChild = winn.firstChild!
+        firsChild.textContent = winner.toString()
+        winn.classList.toggle("display-none")
+
+
+      }
+      createDom()
+
+    }
+
+  })
+
+
+  return { createDom, resetGame }
 
 
 
 }
+const game = playOnDom()
+game.createDom()
+
+//
 
 
 

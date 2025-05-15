@@ -1,0 +1,93 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 15fr;
+  align-items: center;
+  background-color: #0891b2;
+  justify-items: center;
+}
+
+.gameboard {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2px;
+  margin: 2px;
+  gap: .5rem;
+  background-color: #06b6d4;
+
+}
+
+.winner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+
+}
+
+.display-none {
+  display: none;
+}
+
+
+.score {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.score>span {
+  display: inline-flex;
+  align-items: center;
+  padding: .5rem 1.5rem;
+  gap: .5rem;
+}
+
+.turn {
+  border-bottom: .2rem solid black;
+}
+
+.white {
+  color: white;
+}
+
+.reset {
+
+  justify-self: center;
+  all: revert;
+  background-color: inherit;
+  border: .2rem solid #06b6d4;
+  padding: .5em 1.5em;
+  border-radius: .5rem;
+
+}
+
+.reset:hover {
+  background-color: #06b6d4;
+
+}
+
+
+
+button {
+  font-weight: 900;
+  font-size: 2.5rem;
+  height: 6rem;
+  width: 6rem;
+  border: none;
+  background-color: #0891b2;
+}
+
+
+button:hover {
+  background-color: #0891b2;
+}

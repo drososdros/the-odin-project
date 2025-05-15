@@ -18,7 +18,9 @@ const getWinner = function (board) {
 };
 const createPlayer = function (name, symbol) {
     let score = 0;
-    const getScore = () => score;
+    const getScore = () => {
+        return score;
+    };
     const increaseScore = () => score++;
     function resetScore() { score = 0; }
     return { name, symbol, increaseScore, getScore, resetScore };
@@ -37,7 +39,12 @@ function createGame() {
     const nextPlayer = () => currentPlayer.symbol === "X" ? currentPlayer = players[1] : currentPlayer = players[0];
     const board = createBoard();
     const getBoard = board.getBoard;
-    const playersScore = { player1: players[0].getScore(), player2: players[1].getScore() };
+    const playersScore = () => {
+        return {
+            player1: players[0].getScore(),
+            player2: players[1].getScore()
+        };
+    };
     function resetGame() {
         board.resetBoard();
         for (const player of players) {
@@ -61,11 +68,11 @@ function createGame() {
             player.increaseScore();
             board.resetBoard();
             currentPlayer = player;
-            return `${player.name} wins!`;
+            return `${player.symbol} wins!`;
         }
         else if (winner.gameOver) {
             board.resetBoard();
-            return "Its a Draw";
+            return "X O Draw";
         }
         else {
             nextPlayer();
@@ -74,8 +81,50 @@ function createGame() {
     };
     return { playRound, getBoard, playersScore, resetGame, changeName };
 }
-function drawDom() {
+function playOnDom() {
+    const game = createGame();
+    const gameBoard = document.querySelector(".gameboard");
+    const winn = document.querySelector(".winner");
+    function resetGame() {
+        game.resetGame();
+        createDom();
+    }
+    winn.addEventListener("click", () => {
+        winn.classList.toggle("display-none");
+    });
+    function createDom() {
+        const playerOne = document.getElementById("X");
+        const playerTwo = document.getElementById("O");
+        playerOne.textContent = game.playersScore().player1.toString();
+        playerTwo.textContent = game.playersScore().player2.toString();
+        gameBoard.innerHTML = "";
+        game.getBoard().map((value, index) => {
+            const elem = document.createElement("button");
+            elem.textContent = value;
+            elem.id = index.toString();
+            if (value === "O") {
+                elem.classList.add("white");
+            }
+            gameBoard.appendChild(elem);
+        });
+    }
+    gameBoard.addEventListener("click", (e) => {
+        const button = e.target;
+        if (button.id !== "") {
+            const winner = game.playRound(parseInt(button.id));
+            if (winner) {
+                const firsChild = winn.firstChild;
+                firsChild.textContent = winner.toString();
+                winn.classList.toggle("display-none");
+            }
+            createDom();
+        }
+    });
+    return { createDom, resetGame };
 }
+const game = playOnDom();
+game.createDom();
+//
 /* this is how the board render
   0 1 2
   3 4 5

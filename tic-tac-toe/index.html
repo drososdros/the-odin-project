@@ -5,12 +5,43 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<!-- <link href="css/style.css" rel="stylesheet"> -->
+	<link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+	<div class="winner display-none">
+		<p id="message">
+
+		</p>
+
+
+
+	</div>
+	<div class="score">
+		<span>X:<span id="X"></span></span> <span>O:<span id="O"></span></span>
+	</div>
+	<div>
+
+		<button class="reset" type="reset" onclick="game.resetGame()">reset</button>
+	</div>
+
+
+	<div class="gameboard">
+		<!-- <button>X</button> -->
+		<!-- <button></button> -->
+		<!-- <button class="white">O</button> -->
+		<!-- <button></button> -->
+		<!-- <button></button> -->
+		<!-- <button></button> -->
+		<!-- <button></button> -->
+		<!-- <button></button> -->
+		<!-- <button></button> -->
+	</div>
+
 </body>
+
+
 <script src="js/main.js"></script>
 
 </html>
