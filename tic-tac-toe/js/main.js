@@ -44,6 +44,11 @@ function createGame() {
             player.resetScore();
         }
     }
+    function changeName(oldName, newName) {
+        const playerIndex = players.findIndex(player => player.symbol === oldName);
+        const player = players[playerIndex];
+        player.name = newName;
+    }
     const playRound = (index) => {
         if (!board.isEmptyIndex(index)) {
             return;
@@ -67,7 +72,7 @@ function createGame() {
             return;
         }
     };
-    return { playRound, getBoard, playersScore, resetGame };
+    return { playRound, getBoard, playersScore, resetGame, changeName };
 }
 function drawDom() {
 }

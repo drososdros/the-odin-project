@@ -24,6 +24,7 @@ type Game = {
   getBoard: Board["getBoard"]
   playersScore: { player1: number, player2: number }
   resetGame: () => void
+  changeName: (oldName: string, newName: string) => void
 
 }
 
@@ -89,6 +90,12 @@ function createGame(): Game {
       player.resetScore()
     }
   }
+  function changeName(oldName: string, newName: string) {
+    const playerIndex = players.findIndex(player => player.symbol === oldName)
+    const player = players[playerIndex]
+    player.name = newName
+
+  }
 
   const playRound: Game["playRound"] = (index: number) => {
     if (!board.isEmptyIndex(index)) {
@@ -112,7 +119,7 @@ function createGame(): Game {
     }
   }
 
-  return { playRound, getBoard, playersScore, resetGame }
+  return { playRound, getBoard, playersScore, resetGame, changeName }
 
 }
 
