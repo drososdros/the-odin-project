@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  height: 100vh;
+}
+
+nav {
+  background-color: #111;
+  color: white;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+nav>div {
+  letter-spacing: -.3rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+
+nav>ul {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 5rem;
+  text-transform: capitalize;
+}
+
+nav>ul>li {
+  cursor: pointer;
+  padding: 1.25rem;
+}
+
+#root {
+  height: calc(100vh - 5rem);
+}
+
+#home {
+  background-image: url("../img/siyuan-g_V2rt6iG7A-unsplash.jpg");
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#home>* {
+  font-size: 3rem;
+  background-color: inherit;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: .5em 1em;
+}
+
+#home>button:hover {
+  color: #fefe;
+  outline: .2rem solid #fefefe;
+  border-radius: 2rem;
+}
+
+.card-grid {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 3rem;
+
+}
+
+.card {
+  display: flex;
+  background-color: #f4f4f5;
+  padding: 1rem;
+  max-width: 20rem;
+  flex-direction: column;
+  border-radius: .5rem;
+  gap: .5rem;
+
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.description {
+  flex: 1;
+}
+
+.price {
+  text-align: right;
+}
