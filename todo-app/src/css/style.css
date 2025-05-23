@@ -43,13 +43,16 @@ body {
 }
 
 .main__layout__navbar {
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
+  position: relative;
   font-size: 1.25rem;
   grid-column: 1/-1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2em 0 .5em;
+  box-shadow: 0 0 1rem .2rem var(--primary-dark-color);
+  z-index: 1;
 }
 
 .navbar__logo {
@@ -122,6 +125,10 @@ body {
 
 .main__layout__root {
   overflow-y: auto;
+}
+
+.grid-all {
+
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -129,9 +136,11 @@ body {
   gap: 1rem;
 }
 
+
+
 .card {
   padding: 1rem;
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color);
   border-radius: .5rem;
 
 
@@ -168,5 +177,6 @@ body {
 
 .card__item:hover {
   background-color: red;
+
 
 }
