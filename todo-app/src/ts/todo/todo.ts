@@ -42,27 +42,3 @@ export class Todo implements TodoType {
 
 }
 
-
-
-const item = new Task({ name: "name", isCompleted: false, priority: 1 })
-const item2 = new Task({ name: "name", isCompleted: false, priority: 1 })
-const item3 = new Task({ name: "name", isCompleted: false, priority: 1 })
-
-console.log(item.id, item2.id, item3.id);
-const todo = new Todo("shoping list", new Date())
-console.log(todo);
-
-todo.add(item)
-todo.add(item2)
-todo.add(item3)
-console.log(todo);
-todo.remove(item.id)
-console.log(todo);
-
-const obj = todo.getTask(item2.id)
-console.log(obj);
-obj?.update({ name: "hello world" })
-console.log(todo);
-
-
-
