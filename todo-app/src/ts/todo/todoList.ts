@@ -7,8 +7,14 @@ export class TodoList {
   constructor() {
     this.todoList = []
   }
-  add(todo: Todo) {
-    this.todoList.push(todo)
+  add(todo: Todo | Todo[]) {
+    if (Array.isArray(todo)) {
+
+      this.todoList.push(...todo)
+    } else {
+
+      this.todoList.push(todo)
+    }
   }
   remove(id: number) {
     this.todoList = this.todoList.filter(todo => todo.id !== id)
